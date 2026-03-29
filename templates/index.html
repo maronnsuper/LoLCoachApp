@@ -3,13 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoL Coach App</title>
 </head>
 
 <body>
     <h1>LoL Coach App</h1>
-    <p>ver.1 開発中</p>
+
+    <form method="POST">
+        <input type="text" name="game_name" placeholder="Game Name" required>
+        <input type="text" name="tag_line" placeholder="Tag (JP1など)" required>
+        <button type="submit">検索</button>
+    </form>
+
+    {% if puuid %}
+    <p>PUUID: {{ puuid }}</p>
+    {% endif %}
+
 </body>
 
 </html>
