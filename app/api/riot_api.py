@@ -6,7 +6,6 @@ load_dotenv()
 
 API_KEY = os.getenv("RIOT_API_KEY")
 
-print(API_KEY)
 
 HEADERS = {
     "X-Riot-Token": API_KEY
