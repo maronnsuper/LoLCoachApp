@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/Users/murai/Library/Mobile Documents/com~apple~CloudDocs/Documents/GitHub/LoLCoachApp/.venv/bin/python" "$0" "$@"
-' '''
+#!/Users/murai/Documents/GitHub/LoLCoachApp/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

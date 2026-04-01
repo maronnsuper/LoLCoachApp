@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>LoL Coach App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -15,8 +16,59 @@
         <button type="submit">検索</button>
     </form>
 
+    {% if error_message %}
+    <p class="message error">{{ error_message }}</p>
+    {% endif %}
+
+    {% if info_message %}
+    <p class="message info">{{ info_message }}</p>
+    {% endif %}
+
     {% if puuid %}
     <p>PUUID: {{ puuid }}</p>
+    {% endif %}
+
+    {% if match_ids %}
+    <h2>取得結果</h2>
+    <p>取得件数: {{ match_ids | length }}</p>
+    <ul>
+        {% for match_id in match_ids[:5] %}
+        <li>{{ match_id }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if support_matches %}
+    <h2>SUP試合一覧</h2>
+    <p>表示順: 新しい順</p>
+    <p>SUP試合件数: {{ support_matches | length }}</p>
+
+    <table class="match-table">
+        <thead>
+            <tr>
+                <th>勝敗</th>
+                <th>チャンピオン</th>
+                <th>K / D / A</th>
+                <th>ゲーム時間</th>
+                <th>Vision Score</th>
+                <th>Wards Placed</th>
+                <th>Wards Killed</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for match in support_matches %}
+            <tr>
+                <td class="{{ match.win_class }}">{{ match.win }}</td>
+                <td>{{ match.champion_name }}</td>
+                <td>{{ match.kda }}</td>
+                <td>{{ match.game_duration }}</td>
+                <td>{{ match.vision_score }}</td>
+                <td>{{ match.wards_placed }}</td>
+                <td>{{ match.wards_killed }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     {% endif %}
 
 </body>

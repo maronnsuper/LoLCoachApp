@@ -1,0 +1,52 @@
+body {
+    margin: 24px;
+}
+
+form {
+    margin: 20px 0;
+}
+
+input {
+    padding: 8px 10px;
+    margin-right: 8px;
+}
+
+button {
+    padding: 8px 14px;
+}
+
+.message {
+    padding: 10px 12px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.message.error {
+    background: #ffe4e4;
+    color: #9f1f1f;
+}
+
+.message.info {
+    background: #eef4ff;
+    color: #1d3f72;
+}
+
+.match-table {
+    border-collapse: collapse;
+}
+
+.match-table th,
+.match-table td {
+    border: 1px solid #999;
+    padding: 8px 12px;
+}
+
+.match-table td.win {
+    color: #1e7a31;
+    font-weight: 700;
+}
+
+.match-table td.lose {
+    color: #b02a2a;
+    font-weight: 700;
+}
